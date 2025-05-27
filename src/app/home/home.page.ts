@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, NavController } from '@ionic/angular'; // Agrega NavController
 import { CommonModule } from '@angular/common';
-import { RouterModule, Router } from '@angular/router';
+import { RouterModule } from '@angular/router'; // No necesitas importar Router si solo usas NavController
 
 @Component({
   selector: 'app-home',
@@ -11,9 +11,13 @@ import { RouterModule, Router } from '@angular/router';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage {
-  constructor(private router: Router) {}
+  constructor(private navCtrl: NavController) {}
 
   goToLogin() {
-    this.router.navigate(['/login']);
+    this.navCtrl.navigateRoot('/login');
+  }
+
+  goToProfile() {
+    this.navCtrl.navigateRoot('/profile');
   }
 }

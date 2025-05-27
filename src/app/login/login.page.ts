@@ -13,7 +13,9 @@ import { RouterModule } from '@angular/router';
 export class LoginPage {
   constructor(private navCtrl: NavController) {}
 
-  goToDashboard() {
-    this.navCtrl.navigateForward('/dashboard');
+  goToProfile() {
+    this.navCtrl.navigateForward('/profile');
   }
 }
+
+
